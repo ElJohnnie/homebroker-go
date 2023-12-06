@@ -6,7 +6,11 @@ insert in /etc/hosts, this line:
 
 ```shell
 # docker internal
-127.0.0.1 kubernetes.docker.internal host.docker.internal
+127.0.0.1     kubernetes.docker.internal host.docker.internal
+127.0.0.1     kubernetes.docker.internal
+127.0.0.1     host.docker.internal
+172.17.0.1    kafka
+# end section
 ```
 
 init application:
@@ -23,7 +27,7 @@ http://localhost:9021/clusters
 
 create two topics for Kafka: input/output
 
-json test: 
+json test input: 
 ```json
 {
    "order_id":"1",
